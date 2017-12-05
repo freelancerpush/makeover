@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang=en>
+  <title>F5buddy|MakeoverTool</title>
+  <!-- Mirrored from makeoverkit.appspot.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 10 Nov 2017 10:04:32 GMT -->
+  <meta charset=utf-8>
+    <meta name="description" content="MakeoverKit is a javascript based virtual makeover tool for your websites. This is take advantage of HTML canvas and done virtual makeup of user provide images.MakeoverKit used multiple javascript library for find face and get landmark and apply different effects." />
+    <META name="keywords" content="taaz, tazz, virtual makeover, taaz makeover, makeover, online makeover, makeover online, hair color changer, hairstyles, hair colors, hair makeover, virtual hair makeover, virtual hairstyles, new hairstyles, 2014, makeup, eye makeup, blush, lipstick, eyeliner, dye your hair, hairstyles for women, long hairstyles, short hairstyles, black hairstyles, best eyeliner, liquid liner, eyeshadow palette, virtual, makeover, cosmetics, weight, loss, visualizer, simulator, simulation, style,fashion, beauty, virtual,closet, anti-aging, hairstyle, try-on, hair color,virtual, skin care,anti aging">
+      <meta name="google-site-verification" content="-pfzPLfQxrfLZir2jS3pWMNkE4CCnZBwi1cOZc_c900" />
+      <link href=styles/kit.css rel=stylesheet>
+        <link href=font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet crossorigin=anonymous integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN>
+          <link href=styles/kit.support.css rel=stylesheet>
+            <style>body{background:#f1f1f1}</style>
+            <div id=makeoverKit>
+              <div class=left-div id=left-div style=display:none>
+                <div class=kit-tabs>
+                  <div class=main-tabs id=main-tabs>
+                    <ul>
+                      <li id=lip>
+                        <a href=#main-tabs-1>Lip</a>
+                        <li id=eye>
+                          <a href=#main-tabs-2>Eye</a>
+                          <li id=face>
+                            <a href=#main-tabs-3>Face</a>
+                          </ul>
+                          <div class=main-child-tabs id=main-tabs-1>
+                            <div id=lip-tabs>
+                              <ul>
+                                <li>
+                                  <a href=#lip-tabs-1>Lipstick</a>
+                                  <li>
+                                    <a href=#lip-tabs-2>Gloss</a>
+                                    <li>
+                                      <a href=#lip-tabs-3>Liner</a>
+                                    </ul>
+                                    <div id=lip-tabs-1>
+                                      <div class=sub-tab-right>
+                                        <div class=slider-div>
+                                          <span class=slider-lable>Amount</span>
+                                          <div class=amt-slider id=lipstick-amt title="libstick amount"></div>
+                                        </div>
+                                      </div>
+                                      <div class=color-chart>
+                                        <canvas height=250 id=lipstick-color-chart width=250></canvas>
+                                      </div>
+                                    </div>
+                                    <div id=lip-tabs-2>
+                                      <div class=sub-tab-right>
+                                        <div class=slider-div>
+                                          <span class=slider-lable>Amount</span>
+                                          <div class=amt-slider id=lipgloss-amt title="lipgloss amount"></div>
+                                        </div>
+                                      </div>
+                                      <div class=color-chart>
+                                        <canvas height=250 id=lipgloss-color-chart width=250></canvas>
+                                      </div>
+                                    </div>
+                                    <div id=lip-tabs-3>
+                                      <div class=sub-tab-right>
+                                        <div class=slider-div>
+                                          <p class=slider-lable>Amount
+                                            <div class=amt-slider id=lipliner-amt title="lipliner amount"></div>
+                                          </div>
+                                        </div>
+                                        <div class=color-chart>
+                                          <canvas height=250 id=lipliner-color-chart width=250></canvas>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class=main-child-tabs id=main-tabs-2>
+                                    <div id=eye-tabs>
+                                      <ul>
+                                        <li>
+                                          <a href=#eye-tabs-1>Shadow</a>
+                                          <li>
+                                            <a href=#eye-tabs-2>Liner</a>
+                                            <li>
+                                              <a href=#eye-tabs-3>Brows</a>
+                                            </ul>
+                                            <div id=eye-tabs-1>
+                                              <div class=sub-tab-right>
+                                                <div class=slider-div>
+                                                  <p class=slider-lable>Amount
+                                                    <div class=amt-slider id=eyeshadow-amt title="eyeshadow amount"></div>
+                                                  </div>
+                                                  <div class=slider-div>
+                                                    <p class=slider-lable>size
+                                                      <div class=amt-slider id=eyeshadow-size title="eyeshadow amount"></div>
+                                                    </div>
+                                                  </div>
+                                                  <div class=color-chart>
+                                                    <canvas height=250 id=eyeshadow-color-chart width=250></canvas>
+                                                  </div>
+                                                </div>
+                                                <div id=eye-tabs-2>
+                                                  <div class=sub-tab-right>
+                                                    <div class=slider-div>
+                                                      <p class=slider-lable>Amount
+                                                        <div class=amt-slider id=eyeliner-amt title="eyeliner amount"></div>
+                                                      </div>
+                                                      <div class=slider-div>
+                                                        <p class=slider-lable>size
+                                                          <div class=amt-slider id=eyeliner-size title="eyeliner amount"></div>
+                                                        </div>
+                                                      </div>
+                                                      <div class=color-chart>
+                                                        <canvas height=250 id=eyeliner-color-chart width=250></canvas>
+                                                      </div>
+                                                    </div>
+                                                    <div id=eye-tabs-3>
+                                                      <div class=sub-tab-right>
+                                                        <div class=slider-div>
+                                                          <p class=slider-lable>Amount
+                                                            <div class=amt-slider id=eyebrow-amt title="eyebrow amount"></div>
+                                                          </div>
+                                                        </div>
+                                                        <div class=slider-div>
+                                                          <p class=slider-lable>size
+                                                            <div class=amt-slider id=eyebrow-size title="eyebrow amount"></div>
+                                                          </div>
+                                                          <div class=color-chart>
+                                                            <canvas height=250 id=eyebrow-color-chart width=250></canvas>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class=main-child-tabs id=main-tabs-3>
+                                                      <div id=head-tabs>
+                                                        <ul>
+                                                          <li>
+                                                            <a href=#head-tabs-1>Foundation</a>
+                                                            <li>
+                                                              <a href=#head-tabs-2>Concealer</a>
+                                                              <li>
+                                                                <a href=#head-tabs-3>Blush</a>
+                                                              </ul>
+                                                              <div id=head-tabs-1>
+                                                                <div class=sub-tab-right>
+                                                                  <div class=slider-div>
+                                                                    <p class=slider-lable>Amount
+                                                                      <div class=amt-slider id=foundation-amt title="foundation amount"></div>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div class=color-chart>
+                                                                    <canvas height=250 id=foundation-color-chart width=250></canvas>
+                                                                  </div>
+                                                                </div>
+                                                                <div id=head-tabs-2>
+                                                                  <div class=sub-tab-right>
+                                                                    <div class=slider-div>
+                                                                      <p class=slider-lable>Amount
+                                                                        <div class=amt-slider id=concealer-amt title="concealer amount"></div>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class=color-chart>
+                                                                      <canvas height=250 id=concealer-color-chart width=250></canvas>
+                                                                    </div>
+                                                                  </div>
+                                                                  <div id=head-tabs-3>
+                                                                    <div class=sub-tab-right>
+                                                                      <div class=slider-div>
+                                                                        <p class=slider-lable>Amount
+                                                                          <div class=amt-slider id=blush-amt title="blush amount"></div>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class=color-chart>
+                                                                        <canvas height=250 id=blush-color-chart width=250></canvas>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class=fb-page style="box-shadow:1px 2px 4px rgba(0,0,0,.3);width:360px;padding:10px;background:#fff;top:9px"data-adapt-container-width=false data-hide-cover=false data-href=https://www.facebook.com/makeoverkit data-show-facepile=false data-small-header=false>
+                                                              <blockquote cite=https://www.facebook.com/makeoverkit class=fb-xfbml-parse-ignore>
+                                                                <a href=https://www.facebook.com/makeoverkit></a>
+                                                              </blockquote>
+                                                            </div>
+                                                          </div>
+                                                          <div id=center-div>
+                                                            <h1 style=color:#005b7b>MakeoverTool</h1>
+                                                            <p>Make sure your image look like below model images.otherwise facedection doesn't work!!
+                                                              <div class=input-div id=input-div>
+                                                                <h5>Upload</h5>
+                                                                <span class=tools-btn id=upload-btn title=upload>
+                                                                  <i aria-hidden=true class="fa fa-upload"></i>
+                                                                </span>
+                                                                <span class=tools-btn id=web-cam-btn title=webcam>
+                                                                  <i aria-hidden=true class="fa fa-camera"></i>
+                                                                </span>
+                                                                <input id=files style=display:none type=file>
+                                                                  <div class=mod-div style=display:none>
+                                                                    <h5>Recent</h5>
+                                                                  </div>
+                                                                  <div class=mod-div>
+                                                                    <h5>Model</h5>
+                                                                    <img class=mod-img src=img/models/206750644.jpg>
+                                                                      <img class=mod-img src=img/models/60870052.jpg>
+                                                                        <img class=mod-img src=img/models/323982494.jpg>
+                                                                        </div>
+                                                                      </div>
+                                                                      <div class=fb-page style=bottom:15px;background:#fff data-adapt-container-width=false data-hide-cover=false data-href=https://www.facebook.com/makeoverkit data-show-facepile=false data-small-header=false>
+                                                                        <blockquote cite=https://www.facebook.com/makeoverkit class=fb-xfbml-parse-ignore>
+                                                                          <a href=https://www.facebook.com/makeoverkit></a>
+                                                                        </blockquote>
+                                                                      </div>
+                                                                    </div>
+                                                                    <div class=right-div id=right-div style=display:none>
+                                                                      <div class=tools-top>
+                                                                        <span class=tools-btn id=clear-all-btn title="Clear All">
+                                                                          <i aria-hidden=true class="fa fa-eraser"></i>
+                                                                        </span>
+                                                                        <span class=tools-btn id=new-btn title=New>
+                                                                          <i aria-hidden=true class="fa fa-file"></i>
+                                                                        </span>
+                                                                      </div>
+                                                                      <div class=canvas-div id=edit-Wrapper>
+                                                                        <canvas height=480 id=default width=480></canvas>
+                                                                      </div>
+                                                                      <div class=tools>
+                                                                        <span class=tools-btn id=point title=points>
+                                                                          <i aria-hidden=true class="fa fa-spinner"></i>
+                                                                        </span>
+                                                                        <span class=tools-btn id=undo-btn title=undo>
+                                                                          <i aria-hidden=true class="fa fa-undo"></i>
+                                                                        </span>
+                                                                        <span class=tools-btn id=redo-btn title=redo>
+                                                                          <i aria-hidden=true class="fa fa-repeat"></i>
+                                                                        </span>
+                                                                        <div id=zoom-slider title=zoom></div>
+                                                                        <span class=tools-btn id=preview-btn title=preview>
+                                                                          <i aria-hidden=true class="fa fa-eye"></i>
+                                                                        </span>
+                                                                        <a class=tools-btn id=down-btn title=download>
+                                                                          <i aria-hidden=true class="fa fa-download"></i>
+                                                                        </a>
+                                                                      </div>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                                                                <script src=js/model.js></script>
+                                                                <script src=js/kit.support.1.js></script>
+                                                                <script src=js/kit.support.2.js></script>
+                                                                <script src=js/kit.support.3.js></script>
+                                                                <script src=js/kit.js></script>
+                                                                <script>var makeoverKit=new makeoverKit;makeoverKit.init(),$("#upload-btn").click(function(){$("#files").trigger("click")})</script>
+                                                                <div id=fb-root></div>
+                                                                <script>!function(e,n,t){var o,c=e.getElementsByTagName(n)[0];e.getElementById(t)||(o=e.createElement(n),o.id=t,o.src="../connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8",c.parentNode.insertBefore(o,c))}(document,"script","facebook-jssdk")</script>
+ 
